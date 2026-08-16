@@ -2,43 +2,54 @@
   {
     "repo": "vyneras/Archipelago",
     "asset": "pokemon_frlg.apworld",
-    "destination": "~/.local/share/Archipelago/worlds"
+    "destination": "${HOME}/.local/share/Archipelago/worlds"
   },{
     "repo": "spicynun/Archipelago",
     "asset": "ffta.apworld",
-    "destination": "~/.local/share/Archipelago/worlds"
+    "destination": "${HOME}/.local/share/Archipelago/worlds"
   },{
     "repo": "gjgfuj/SlotLock",
     "asset": "slotlock.apworld",
-    "destination": "~/.local/share/Archipelago/worlds"
+    "destination": "${HOME}/.local/share/Archipelago/worlds"
   },{
     "repo": "qixils/NeoForgeAP",
     "asset": "minecraft.apworld",
-    "destination": "~/.local/share/Archipelago/worlds"
+    "destination": "${HOME}/.local/share/Archipelago/worlds"
   },{
     "repo": "SWCreeperKing/ArchipelagoSurvivors",
     "asset": "vampire_survivors.apworld",
-    "destination": "~/.local/share/Archipelago/worlds"
+    "destination": "${HOME}/.local/share/Archipelago/worlds"
   },{
     "repo":"ArchipelagoMW/Archipelago",
     "asset":"Archipelago_0.6.7_linux-x86_64.AppImage",
     "rename":"archipelago.appimage",
-    "destination":"~/AppImages/"
+    "destination":"${HOME}/AppImages"
   },{
     "repo":"kbranch/Magpie-LADX-Autotracker",
     "asset":"magpie-autotracker-linux",
     "rename":"magpie-autotracker-linux",
-    "destination":"~/bin/"
+    "destination":"${HOME}/bin/"
   },{
     "repo":"palex00/crystal-ap-tracker",
     "asset":"Source code",
     "rename":"crystal-ap-tracker.zip",
-    "destination":"~/PopTracker/packs"
+    "destination":"${HOME}/PopTracker/packs"
   },{
     "repo":"gerbiljames/Archipelago-Crystal",
     "asset":"pokemon_crystal.apworld",
     "rename":"pokemon_crystal.apworld",
-    "destination":"~/.local/share/Archipelago/worlds"
+    "destination":"${HOME}/.local/share/Archipelago/worlds"
+  },{
+    "repo":"nielrenned/PokemonSnap_Archipelago",
+    "asset":"pokemon_snap.apworld",
+    "rename":"ppokemon_snap.apworld",
+    "destination":"${HOME}/.local/share/Archipelago/worlds"
+  },
+  {
+    "repo":"lighting8282/Pokemon-Snap-AP-Pop-Tracker",
+    "asset":"SnapTracker-1.4.0.2.zip",
+    "rename":"SnapTracker.zip",
+    "destination":"${HOME}/PopTracker/packs"
   }
   
 ]

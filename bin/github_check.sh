@@ -98,7 +98,7 @@ jq -c '.[]' "$CONFIG_FILE" | while read -r entry; do
    
     REPO=$(jq -r '.repo' <<< "$entry")
     ASSET=$(jq -r '.asset' <<< "$entry")
-    DEST=$(jq -r '.destination' <<< "$entry")
+    DEST=$(jq -r '.destination' <<< "$entry" | envsubst ) 
     RENAME=$(jq -r '.rename' <<< "$entry")
     echo
     echo "=== Checking ${REPO} ==="
@@ -143,7 +143,7 @@ jq -c '.[]' "$CONFIG_FILE" | while read -r entry; do
         echo "Asset not found: ${ASSET}"
         continue
     fi
-
+    echo $DEST
     mkdir -p "$DEST"
 
     echo "Downloading ${ASSET}"
@@ -152,11 +152,10 @@ jq -c '.[]' "$CONFIG_FILE" | while read -r entry; do
     if [[ ! -z "$RENAME" ]]; then
         DOWNLOAD_FILE=$RENAME
     fi
-    set -x
     curl -fL \
         -o "${DEST}/${DOWNLOAD_FILE}" \
         "$DOWNLOAD_URL"
-    set +x
+    echo "Saved ${DEST}/${DOWNLOAD_FILE} to $DOWNLOAD_URL"
     echo "$TAG" > "$STATE_FILE"
     echo "Updated ${ASSET} -> ${TAG}"
     MESSAGE="Updated ${ASSET} -> ${TAG}"
