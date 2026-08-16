@@ -42,7 +42,7 @@
   },{
     "repo":"nielrenned/PokemonSnap_Archipelago",
     "asset":"pokemon_snap.apworld",
-    "rename":"ppokemon_snap.apworld",
+    "rename":"pokemon_snap.apworld",
     "destination":"${HOME}/.local/share/Archipelago/worlds"
   },
   {
