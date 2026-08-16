@@ -22,18 +22,18 @@ echo Copy Bin
 cp -vr bin/* ${HOME}/bin/
 echo 
 
-echo Copy Applications
+echo Copy Applications to tmp
 rsync -av --delete applications/ /tmp/applications/
 echo 
 
-ls /tmp/applications/ | while read file; do 
+ls /tmp/applications/*.desktop | while read file; do 
     echo "FILE NAME: ${file}";
-    sed -i "s|\${HOME}|${HOME}|g" "/tmp/applications/${file}"
-    cat "/tmp/applications/${file}"
+    sed -i "s|\${HOME}|${HOME}|g" "${file}"
+    cat "${file}"
     echo 
 done
-
-cp /tmp/applications/* ${HOME}/.local/share/applications/
+echo Copy Applications from tmp
+cp -rv /tmp/applications/* ${HOME}/.local/share/applications/
 
 update-mime-database ${HOME}/.local/share/mime
 update-desktop-database ${HOME}/.local/share/applications/
