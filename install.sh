@@ -12,7 +12,7 @@ if [ ! -d "/tmp/applications/" ]; then
   mkdir "/tmp/applications/"
 fi
 
-if [ ! -d "/tmp/applications/" ]; then
+if [ ! -d "${HOME}/bin/" ]; then
   mkdir "${HOME}/bin/"
 fi
 
