@@ -34,6 +34,10 @@ ls /tmp/applications/*.desktop | while read file; do
 done
 echo Copy Applications from tmp
 cp -rv /tmp/applications/* ${HOME}/.local/share/applications/
+echo
+echo Copy icons
+rsync -av  .icons/ ${HOME}/AppImages/.icons/
+echo 
 
 update-mime-database ${HOME}/.local/share/mime
 update-desktop-database ${HOME}/.local/share/applications/
