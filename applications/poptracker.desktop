@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=PopTracker
+Icon=${HOME}/AppImages/.icons/poptracker
+TryExec=${HOME}/AppImages/poptracker.appimage
+Exec=env DESKTOPINTEGRATION=1 ${HOME}/AppImages/poptracker.appimage
+Terminal=false
+Categories=Utility;
+X-AppImage-Arch=x86_64
+X-AppImage-Version=0.35.1
+X-AppImage-Name=PopTracker

@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=RetroArch (GBC - Gambatte)
+Comment=Game Boy Color Emulator
+Exec=flatpak run org.libretro.RetroArch -L sameboy_libretro %f
+Icon=org.libretro.RetroArch
+Terminal=false
+Type=Application
+Categories=Game;Emulator;
+MimeType=application/x-gameboy-color-rom;application/x-gameboy-rom;
+StartupNotify=true

@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Archipelago Server
+Exec=bash -c "${HOME}/bin/archipelago-server.sh '%f'; exec bash"
+Icon=${HOME}/AppImages/.icons/archipelago
+Terminal=true
+NoDisplay=false
+StartupNotify=false
+Categories=Game;
+MimeType=application/x-archipelago-server;

@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Magpi Auto Tracker
+Exec=${HOME}/bin/magpie-autotracker-linux
+Icon=${HOME}/bin/magpie-autotracker-linux
+Terminal=true
+NoDisplay=false
+StartupNotify=false
+Categories=Game;

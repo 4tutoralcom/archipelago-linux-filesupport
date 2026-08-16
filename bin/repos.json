@@ -1,0 +1,34 @@
+[
+  {
+    "repo": "vyneras/Archipelago",
+    "asset": "pokemon_frlg.apworld",
+    "destination": "~/.local/share/Archipelago/worlds"
+  },{
+    "repo": "spicynun/Archipelago",
+    "asset": "ffta.apworld",
+    "destination": "~/.local/share/Archipelago/worlds"
+  },{
+    "repo": "gjgfuj/SlotLock",
+    "asset": "slotlock.apworld",
+    "destination": "~/.local/share/Archipelago/worlds"
+  },{
+    "repo": "qixils/NeoForgeAP",
+    "asset": "minecraft.apworld",
+    "destination": "~/.local/share/Archipelago/worlds"
+  },{
+    "repo": "SWCreeperKing/ArchipelagoSurvivors",
+    "asset": "vampire_survivors.apworld",
+    "destination": "~/.local/share/Archipelago/worlds"
+  },{
+    "repo":"ArchipelagoMW/Archipelago",
+    "asset":"Archipelago_0.6.7_linux-x86_64.AppImage",
+    "rename":"archipelago.appimage",
+    "destination":"~/AppImages/"
+  },{
+    "repo":"kbranch/Magpie-LADX-Autotracker",
+    "asset":"magpie-autotracker-linux",
+    "rename":"magpie-autotracker-linux",
+    "destination":"~/bin/"
+  }
+]
+  

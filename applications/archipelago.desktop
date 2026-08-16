@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Archipelago
+Exec=bash -c "${HOME}/bin/archipelago-wait-rom.sh '%f'; "
+TryExec=${HOME}/AppImages/archipelago.appimage
+Icon=${HOME}/AppImages/.icons/archipelago
+Terminal=false
+NoDisplay=false
+StartupNotify=true
+Categories=Game;
+MimeType=application/x-apladx;application/x-apfirered;
+X-AppImage-Name=Archipelago
