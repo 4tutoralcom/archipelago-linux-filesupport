@@ -12,13 +12,20 @@ if [ ! -d "/tmp/applications/" ]; then
   mkdir "/tmp/applications/"
 fi
 
+echo Copy Packages
 cp -v packages/*.xml ${MIME_FOLDER}/packages/
 chmod 770 bin/*.sh
 chmod 770 bin/pack_scripts/*.sh
-cp -vr bin/* ${HOME}/bin/
-rsync -av --delete applications/ /tmp/applications/
+echo
 
+echo Copy Bin
+cp -vr bin/* ${HOME}/bin/
 echo 
+
+echo Copy Applications
+rsync -av --delete applications/ /tmp/applications/
+echo 
+
 ls /tmp/applications/ | while read file; do 
     echo "FILE NAME: ${file}";
     sed -i "s|\${HOME}|${HOME}|g" "/tmp/applications/${file}"
