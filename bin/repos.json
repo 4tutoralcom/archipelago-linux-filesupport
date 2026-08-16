@@ -29,6 +29,17 @@
     "asset":"magpie-autotracker-linux",
     "rename":"magpie-autotracker-linux",
     "destination":"~/bin/"
+  },{
+    "repo":"palex00/crystal-ap-tracker",
+    "asset":"Source code",
+    "rename":"crystal-ap-tracker.zip",
+    "destination":"~/PopTracker/packs"
+  },{
+    "repo":"gerbiljames/Archipelago-Crystal",
+    "asset":"pokemon_crystal.apworld",
+    "rename":"pokemon_crystal.apworld",
+    "destination":"~/.local/share/Archipelago/worlds"
   }
+  
 ]
   
