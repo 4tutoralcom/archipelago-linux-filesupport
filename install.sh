@@ -12,6 +12,10 @@ if [ ! -d "/tmp/applications/" ]; then
   mkdir "/tmp/applications/"
 fi
 
+if [ ! -d "/tmp/applications/" ]; then
+  mkdir "${HOME}/bin/"
+fi
+
 echo Copy Packages
 cp -v packages/*.xml ${MIME_FOLDER}/packages/
 chmod 770 bin/*.sh
