@@ -9,5 +9,5 @@ Terminal=false
 NoDisplay=false
 StartupNotify=true
 Categories=Game;
-MimeType=application/x-apladx;application/x-apfirered;
+MimeType=application/x-apladx;application/x-apfirered;application/x-apsnap;
 X-AppImage-Name=Archipelago

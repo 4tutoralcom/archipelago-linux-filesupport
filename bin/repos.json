@@ -47,7 +47,7 @@
   },
   {
     "repo":"lighting8282/Pokemon-Snap-AP-Pop-Tracker",
-    "asset":"SnapTracker-1.4.0.2.zip",
+    "asset":"SnapTracker-1.5.0.0.zip",
     "rename":"SnapTracker.zip",
     "destination":"${HOME}/PopTracker/packs"
   }
