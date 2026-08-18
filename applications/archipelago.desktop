@@ -2,7 +2,7 @@
 [Desktop Entry]
 Type=Application
 Name=Archipelago
-Exec=bash -c "${HOME}/bin/archipelago-wait-rom.sh '%f'; "
+Exec=${HOME}/bin/archipelago-wait-rom.sh "%f"
 TryExec=${HOME}/AppImages/archipelago.appimage
 Icon=${HOME}/AppImages/.icons/archipelago
 Terminal=false
