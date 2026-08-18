@@ -2,7 +2,7 @@
 [Desktop Entry]
 Type=Application
 Name=Archipelago Server
-Exec=bash -c "${HOME}/bin/archipelago-server.sh '%f'; exec bash"
+Exec=${HOME}/bin/archipelago-server.sh "%f"
 Icon=${HOME}/AppImages/.icons/archipelago
 Terminal=true
 NoDisplay=false
