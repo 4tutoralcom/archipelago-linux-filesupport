@@ -1,0 +1,1 @@
+./launch.sh /home/dittmaar/.local/share/Archipelago/output/AP_34134093805272920043/AP_34134093805272920043_P1_Player1.z64
