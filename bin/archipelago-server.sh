@@ -7,4 +7,4 @@ if [ -z "$FILE" ]; then
   exit 1
 fi
 
-${HOME}/AppImages/archipelago.appimage "$FILE"
+"${HOME}/AppImages/archipelago.appimage" "$FILE"

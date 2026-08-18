@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 FILE="$1"
-SCRIPT_DIR=$(readlink -f ${HOME}/bin/pack_scripts)
+SCRIPT_DIR=$(readlink -f "${HOME}/bin/pack_scripts")
 
-echo $SCRIPT_DIR
+echo "${SCRIPT_DIR}"
 # Start Archipelago (server or generator)
-APP=$(readlink -f ${HOME}/AppImages/archipelago.appimage)
+APP=$(readlink -f "${HOME}/AppImages/archipelago.appimage")
 echo "Starting Archipelago..."
 if [ -z "$FILE" ]; then
-  env DESKTOPINTEGRATION=1 "$APP"
+  env DESKTOPINTEGRATION=1 "${APP}"
   sleep infinity
   exit
 fi
@@ -36,7 +36,7 @@ echo "$line"
     echo "Launching ROM..."
 
     if [ "${extension}" = "apfirered" ]; then
-      ${HOME}/Applications/BizHawk-2.11.1-linux-x64/EmuHawkMono.sh $ROM_PATH --lua= ${HOME}/.local/share/Archipelago/data/lua/connector_bizhawk_generic.lua
+      "${HOME}/Applications/BizHawk-2.11.1-linux-x64/EmuHawkMono.sh" "${ROM_PATH}" --lua= "${HOME}/.local/share/Archipelago/data/lua/connector_bizhawk_generic.lua"
     else
       xdg-open "$ROM_PATH"
     fi

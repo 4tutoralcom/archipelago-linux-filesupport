@@ -1,4 +1,6 @@
+#!/usr/bin/env bash
+
 git fetch -v
 git pull
 ./install_all.sh
-~/bin/github_check.sh
+"${HOME}/bin/github_check.sh"

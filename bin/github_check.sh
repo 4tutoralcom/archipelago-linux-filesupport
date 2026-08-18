@@ -13,8 +13,8 @@ get_github_release() {
     mkdir -p "$CACHE_DIR"
 
     # Use cached release information if it is still fresh
-    if [[ -f "$CACHE_FILE" ]] && \
-       (( $(date +%s) - $(stat -c %Y "$CACHE_FILE") < CACHE_MAX_AGE )); then
+    if [[ -f "$CACHE_FILE" ]] \
+        && (($(date +%s) - $(stat -c %Y "$CACHE_FILE") < CACHE_MAX_AGE)); then
         cat "$CACHE_FILE"
         return 0
     fi
@@ -44,7 +44,7 @@ get_github_release() {
     NEW_RELEASE_JSON=$(
         curl "${CURL_COMMON_ARGS[@]}" \
             "https://api.github.com/repos/${REPO}/releases/latest" \
-            2>/dev/null
+            2> /dev/null
     ) || NEW_RELEASE_JSON=""
 
     # Fall back to newest release/prerelease
@@ -54,8 +54,8 @@ get_github_release() {
         NEW_RELEASE_JSON=$(
             curl "${CURL_COMMON_ARGS[@]}" \
                 "https://api.github.com/repos/${REPO}/releases" \
-                2>/dev/null |
-            jq '.[0]' 2>/dev/null
+                2> /dev/null \
+                | jq '.[0]' 2> /dev/null
         ) || NEW_RELEASE_JSON=""
 
         # jq returns "null" when there are no releases
@@ -86,7 +86,6 @@ get_github_release() {
     return 1
 }
 
-
 mkdir -p "$CACHE_DIR"
 
 if [[ ! -f "$CONFIG_FILE" ]]; then
@@ -95,10 +94,10 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
 fi
 
 jq -c '.[]' "$CONFIG_FILE" | while read -r entry; do
-   
+
     REPO=$(jq -r '.repo' <<< "$entry")
     ASSET=$(jq -r '.asset' <<< "$entry")
-    DEST=$(jq -r '.destination' <<< "$entry" | envsubst ) 
+    DEST=$(jq -r '.destination' <<< "$entry" | envsubst)
     RENAME=$(jq -r '.rename' <<< "$entry")
     echo
     echo "=== Checking ${REPO} ==="
@@ -126,24 +125,23 @@ jq -c '.[]' "$CONFIG_FILE" | while read -r entry; do
 
     DOWNLOAD_URL=$(
         jq -r \
-            --arg asset "$ASSET" '
+            --arg asset "${ASSET}" '
                 .assets[]
                 | select(.name == $asset)
                 | .browser_download_url
             ' <<< "$RELEASE_JSON"
     )
 
-
-    if [[ -z "$DOWNLOAD_URL"] && ["$asset" == "Source code" ]]; then
-        DOWNLOAD_URL=$(echo $RELEASE_JSON | jq -r .zipball_url)
+    if [[ -z "$DOWNLOAD_URL" ]] && [[ "${ASSET}" == "Source code" ]]; then
+        DOWNLOAD_URL=$(echo "${RELEASE_JSON}" | jq -r .zipball_url)
     fi
-    echo $DOWNLOAD_URL
+    echo "$DOWNLOAD_URL"
     if [[ -z "$DOWNLOAD_URL" ]]; then
-        jq -r '.assets[].name'<<< "$RELEASE_JSON"
+        jq -r '.assets[].name' <<< "$RELEASE_JSON"
         echo "Asset not found: ${ASSET}"
         continue
     fi
-    echo $DEST
+    echo "$DEST"
     mkdir -p "$DEST"
 
     echo "Downloading ${ASSET}"
@@ -160,7 +158,7 @@ jq -c '.[]' "$CONFIG_FILE" | while read -r entry; do
     echo "Updated ${ASSET} -> ${TAG}"
     MESSAGE="Updated ${ASSET} -> ${TAG}"
     notify-send \
-      "Archipelago Update" \
-      "$MESSAGE" \
-      --icon=software-update-available
+        "Archipelago Update" \
+        "$MESSAGE" \
+        --icon=software-update-available
 done
